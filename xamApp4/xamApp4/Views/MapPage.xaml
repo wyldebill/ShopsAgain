@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="xamApp4.Views.MapPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+              />
+            <maps:Map x:Name="ShopsMap" IsShowingUser="False"></maps:Map>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                  Text="Store Name"
+                  x:Name="StoreName"
+                  Margin="10"/>
+                <Label Grid.Row="0" Grid.Column="1"
+                  Text="157ft"
+                  x:Name="StoreDistance"
+                  Margin="10"/>
+                <Label Grid.Row="0" Grid.Column="2"
+                  Text="Email"
+                  x:Name="StoreEmailLink"
+                  Margin="10"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
