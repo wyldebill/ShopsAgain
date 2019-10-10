@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using xamApp4.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
@@ -18,8 +18,9 @@ namespace xamApp4.Views
         public MapPage()
         {
             InitializeComponent();
-       
-        }
+			BindingContext = new PinItemViewModel();
+
+		}
 
         protected override async void OnAppearing()
         {
@@ -54,15 +55,18 @@ namespace xamApp4.Views
                     await DisplayAlert("Location Denied", "Can not continue, try again.", "OK");
                 }
 
+				
+
                 ShopsMap.MoveToRegion(
                      MapSpan.FromCenterAndRadius(
                          new Position(45.172285, -93.874306), Distance.FromMeters(50.00D)));
+				//ShopsMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(39.8283459, -98.5794797), Distance.FromMiles(1500)));
 
-                //var zoomLevel = 18; // pick a value between 1 and 18
-                //var latlongdeg = 360 / (Math.Pow(2, zoomLevel));
-                //ShopsMap.MoveToRegion(new MapSpan(ShopsMap.VisibleRegion.Center, latlongdeg, latlongdeg));
-            }
-            catch (Exception ex)
+				//var zoomLevel = 18; // pick a value between 1 and 18
+				//var latlongdeg = 360 / (Math.Pow(2, zoomLevel));
+				//ShopsMap.MoveToRegion(new MapSpan(ShopsMap.VisibleRegion.Center, latlongdeg, latlongdeg));
+			}
+			catch (Exception ex)
             {
                 throw;
             }

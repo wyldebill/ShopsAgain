@@ -10,7 +10,16 @@
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
               />
-            <maps:Map x:Name="ShopsMap" IsShowingUser="False"></maps:Map>
+            <maps:Map x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}">
+                <maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}" />
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+            </maps:Map>
+            
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
