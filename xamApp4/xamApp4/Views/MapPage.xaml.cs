@@ -59,7 +59,7 @@ namespace xamApp4.Views
 
                 ShopsMap.MoveToRegion(
                      MapSpan.FromCenterAndRadius(
-                         new Position(45.172285, -93.874306), Distance.FromMeters(50.00D)));
+                         new Position(45.172285, -93.874306), Distance.FromMeters(550.00D)));
 				//ShopsMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(39.8283459, -98.5794797), Distance.FromMiles(1500)));
 
 				//var zoomLevel = 18; // pick a value between 1 and 18
@@ -71,5 +71,10 @@ namespace xamApp4.Views
                 throw;
             }
         }
-    }
+
+		private void Pin_Clicked(object sender, EventArgs e)
+		{
+			DisplayAlert("click", "clicked", "done");
+		}
+	}
 }

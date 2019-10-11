@@ -19,9 +19,9 @@ namespace xamApp4.ViewModels
 		{
 			_locations = new ObservableCollection<Location>()
 			{
-				new Location("8 1st Ave S, Buffalo, MN 55313", "Ritzy Replay", new Position(45.170633, -93.874608)),
-				new Location("8 1st Ave S, Buffalo, MN 55313", "Evelyns Winebar", new Position(45.172654, -93.876058)),
-				new Location("8 1st Ave S, Buffalo, MN 55313", "A Wreath Of Franklin", new Position(45.172654, -93.876058))
+				new Location(1,"8 1st Ave S, Buffalo, MN 55313", "Ritzy Replay", new Position(45.170633, -93.874608),"RitzyReplay"),
+				new Location(2,"8 1st Ave S, Buffalo, MN 55313", "Evelyns Winebar", new Position(45.172654, -93.876058),"RitzyReplay"),
+				new Location(3,"8 1st Ave S, Buffalo, MN 55313", "A Wreath Of Franklin", new Position(45.172654, -93.876058),"RitzyReplay")
 			};
 		}
 	}

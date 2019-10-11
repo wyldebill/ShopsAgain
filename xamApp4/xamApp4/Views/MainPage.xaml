@@ -8,7 +8,7 @@
             x:Class="xamApp4.Views.MainPage">
 
     <TabbedPage.Children>
-        <NavigationPage Title="Maps">
+       <NavigationPage Title="Maps">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_about.png"/>
@@ -18,7 +18,7 @@
                 <views:MapPage />
             </x:Arguments>
         </NavigationPage>
-        
+
         <NavigationPage Title="Stores">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -29,8 +29,8 @@
                 <views:ItemsPage />
             </x:Arguments>
         </NavigationPage>
-        
-      
+       
+       
     </TabbedPage.Children>
     
 </TabbedPage>

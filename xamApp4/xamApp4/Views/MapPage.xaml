@@ -10,7 +10,7 @@
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
               />
-            <maps:Map x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}">
+            <!--<maps:Map x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}">
                 <maps:Map.ItemTemplate>
                     <DataTemplate>
                         <maps:Pin Position="{Binding Position}"
@@ -18,18 +18,18 @@
                               Label="{Binding Description}" />
                     </DataTemplate>
                 </maps:Map.ItemTemplate>
-            </maps:Map>
+            </maps:Map>-->
             
-            <Grid>
+            <Grid BackgroundColor="Blue" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0"
@@ -44,6 +44,27 @@
                   Text="Email"
                   x:Name="StoreEmailLink"
                   Margin="10"/>
+                
+
+
+                <maps:Map Grid.Row="1" Grid.ColumnSpan="3" x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}"
+                          HeightRequest="350">
+                    <maps:Map.ItemTemplate>
+                        <DataTemplate>
+                            <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}"
+                                      Clicked="Pin_Clicked"/>
+                        </DataTemplate>
+                    </maps:Map.ItemTemplate>
+                </maps:Map>
+
+
+                <Image Grid.Row="2" Grid.ColumnSpan="3"
+                  Source="RitzyReplay.jpg"
+                       HeightRequest="300"
+                  x:Name="StoreFrontImage"
+                 />
             </Grid>
         </StackLayout>
     </ContentPage.Content>
