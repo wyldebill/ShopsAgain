@@ -81,6 +81,7 @@ namespace xamApp4.Views
 			// find the user's position
 			try
 			{
+				// TODO: add cancellation token so we can timeout gracefully
 				location = await Geolocation.GetLastKnownLocationAsync();
 
 				if (location != null)
