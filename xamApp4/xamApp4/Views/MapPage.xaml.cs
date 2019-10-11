@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using xamApp4.ViewModels;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
@@ -72,9 +73,51 @@ namespace xamApp4.Views
             }
         }
 
-		private void Pin_Clicked(object sender, EventArgs e)
+		private async void Pin_Clicked(object sender, EventArgs e)
 		{
-			DisplayAlert("click", "clicked", "done");
+			Geocoder geoCoder = new Geocoder();
+			Location location = null;
+
+			// find the user's position
+			try
+			{
+				location = await Geolocation.GetLastKnownLocationAsync();
+
+				if (location != null)
+				{
+					Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+				}
+			}
+			catch (FeatureNotSupportedException fnsEx)
+			{
+				// Handle not supported on device exception
+			}
+			catch (FeatureNotEnabledException fneEx)
+			{
+				// Handle not enabled on device exception
+			}
+			catch (PermissionException pEx)
+			{
+				// Handle permission exception
+			}
+			catch (Exception ex)
+			{
+				// Unable to get location
+			}
+
+
+			// find the position of the pin they clicked
+			Pin clickedPin = sender as Pin;
+			if (clickedPin == null)
+				throw new Exception("Pin not found");
+
+
+
+			// compute the distance between, no routing/pathing yet
+			double distanceFromUser = Location.CalculateDistance(location.Latitude, location.Longitude, clickedPin.Position.Latitude, clickedPin.Position.Longitude, DistanceUnits.Miles);
+			distanceFromUser = distanceFromUser * 5280.00;
+
+			await DisplayAlert("click", "distance: "+distanceFromUser.ToString() + " feet", "done");
 		}
 	}
 }
