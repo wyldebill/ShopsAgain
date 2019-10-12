@@ -3,7 +3,7 @@
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
  
     <application android:label="xamApp4.Android">
-      <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="useyerownkey" />
+      <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="useryerownkey" />
     </application>
   
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

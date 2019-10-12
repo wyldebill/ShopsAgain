@@ -8,46 +8,20 @@
              x:Class="xamApp4.Views.MapPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-              />
-            <!--<maps:Map x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}">
-                <maps:Map.ItemTemplate>
-                    <DataTemplate>
-                        <maps:Pin Position="{Binding Position}"
-                              Address="{Binding Address}"
-                              Label="{Binding Description}" />
-                    </DataTemplate>
-                </maps:Map.ItemTemplate>
-            </maps:Map>-->
-            
             <Grid BackgroundColor="Blue" >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*"/>
+                    <!--<ColumnDefinition Width="*"/>-->
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0"
-                  Text="Store Name"
-                  x:Name="StoreName"
-                  Margin="10"/>
-                <Label Grid.Row="0" Grid.Column="1"
-                  Text="157ft"
-                  x:Name="StoreDistance"
-                  Margin="10"/>
-                <Label Grid.Row="0" Grid.Column="2"
-                  Text="Email"
-                  x:Name="StoreEmailLink"
-                  Margin="10"/>
                 
-
-
-                <maps:Map Grid.Row="1" Grid.ColumnSpan="3" x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}"
+                
+                <maps:Map Grid.Row="0" Grid.ColumnSpan="2" x:Name="ShopsMap" IsShowingUser="False"  ItemsSource="{Binding StoreLocations}"
                           HeightRequest="350">
                     <maps:Map.ItemTemplate>
                         <DataTemplate>
@@ -58,11 +32,28 @@
                         </DataTemplate>
                     </maps:Map.ItemTemplate>
                 </maps:Map>
+                
+                <Label Grid.Row="1" Grid.Column="0"
+                  Text="Store Name"
+                  x:Name="StoreName"
+                  Margin="10"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                  Text="157ft"
+                  x:Name="StoreDistance"
+                  Margin="10"/>
+                <!--<Label Grid.Row="0" Grid.Column="2"
+                  Text="Email"
+                  x:Name="StoreEmailLink"
+                  Margin="10"/>-->
+                
 
 
-                <Image Grid.Row="2" Grid.ColumnSpan="3"
-                  Source="RitzyReplay.jpg"
-                       HeightRequest="300"
+
+
+
+                <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                  Source="HayesPublicHouse.jpg"
+                      
                   x:Name="StoreFrontImage"
                  />
             </Grid>
